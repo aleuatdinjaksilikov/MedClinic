@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.songs.ui.home.screen.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_doctorsFragment"
+            app:destination="@id/doctorsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/doctorsFragment"
+        android:name="com.example.songs.ui.doctors.list.screen.DoctorsFragment"
+        android:label="DoctorsFragment"
+        tools:layout="@layout/fragment_doctors">
+        <action
+            android:id="@+id/action_doctorsFragment_to_doctorDetailFragment"
+            app:destination="@id/doctorDetailFragment" />
+        <action
+            android:id="@+id/action_doctorsFragment_to_addDoctorFragment"
+            app:destination="@id/addDoctorFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/doctorDetailFragment"
+        android:name="com.example.songs.ui.doctors.details.screen.DoctorDetailFragment"
+        android:label="DoctorDetailFragment"
+        tools:layout="@layout/fragment_doctor_details">
+        <action
+            android:id="@+id/action_doctorDetailFragment_to_editDoctorFragment"
+            app:destination="@id/editDoctorFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editDoctorFragment"
+        android:name="com.example.songs.ui.doctors.edit.EditDoctorFragment"
+        android:label="EditDoctorFragment"
+        tools:layout="@layout/fragment_edit_doctor"/>
+    <fragment
+        android:id="@+id/addDoctorFragment"
+        android:name="com.example.songs.ui.doctors.add.AddDoctorFragment"
+        android:label="AddDoctorFragment"
+        tools:layout="@layout/fragment_add_doctor"/>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.songs.ui.login.LoginFragment"
+        android:label="LoginFragment"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/loginFragment"/>
+    </fragment>
+</navigation>
